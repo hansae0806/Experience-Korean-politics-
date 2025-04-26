@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한국 정치를 체험하세요 - 온라인</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>한국 정치를 체험하세요 🌏</h1>
+
+        <div id="login">
+            <input type="text" id="username" placeholder="정당 이름을 입력하세요" />
+            <button onclick="joinGame()">게임 참가</button>
+        </div>
+
+        <div id="game" style="display:none;">
+            <h2 id="current_date"></h2>
+            <h3 id="ruling_party"></h3>
+            <h3 id="budget"></h3>
+
+            <div id="players"></div>
+
+            <div id="actions">
+                <button onclick="sendAction('policy')">복지 정책 추진</button>
+                <button onclick="sendAction('campaign')">선거 유세</button>
+                <button onclick="sendAction('special')">특별 정책</button>
+                <button onclick="sendAction('budget_increase')">세금 인상</button>
+                <button onclick="sendAction('budget_welfare')">복지 확대</button>
+            </div>
+
+            <div id="messages"></div>
+        </div>
+    </div>
+</body>
+</html>
